@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./App";
+import { App } from "./core/App";
 import { Normalize } from "styled-normalize";
-import { GlobalStyle } from "./GlobalStyle";
+import { GlobalStyle } from "./core/GlobalStyle";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
