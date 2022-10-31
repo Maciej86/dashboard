@@ -5,8 +5,8 @@ import { Section } from "./styled";
 export const App = () => {
   return (
     <main>
-      <Bar />
       <Navigation />
+      <Bar />
       <Section>Tutaj treść całego pulpitu</Section>
     </main>
   );

@@ -5,5 +5,4 @@ export const Nav = styled.nav`
   width: 300px;
   height: 100%;
   background: rgb(69, 69, 69);
-  padding-top: 80px;
 `;
