@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { widthNawigation } from "../../core/styled";
+import { size } from "../../core/theme";
 
 export const Header = styled.header`
   position: fixed;
-  width: calc(100% - ${widthNawigation}px);
-  height: 70px;
-  margin-left: ${widthNawigation}px;
+  width: calc(100% - ${size.widthNawigation}px);
+  height: ${size.heightBar}px;
+  margin-left: ${size.widthNawigation}px;
   padding: 0 20px;
-  background: rgb(39, 39, 39);
-  color: rgb(253, 253, 253);
+  background: ${({ theme }) => theme.backgroundBar};
+  color: ${({ theme }) => theme.colorText};
 `;
