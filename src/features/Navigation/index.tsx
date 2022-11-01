@@ -1,9 +1,12 @@
-import { Nav } from "./styled";
+import { Nav, Logo, LogoIcon, LogoTitle } from "./styled";
 
 export const Navigation = () => {
   return (
     <Nav>
-      <p>Tutaj zrobimy nawigację główną</p>
+      <Logo>
+        <LogoIcon />
+        <LogoTitle>DashBoard</LogoTitle>
+      </Logo>
     </Nav>
   );
 };
