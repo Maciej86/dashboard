@@ -3,7 +3,7 @@ import { size } from "../../core/theme";
 import { ReactComponent as ButtonToggleNav } from "./toggle_nav.svg";
 
 interface RotateIcon {
-  iconRotate: boolean;
+  $iconRotate: boolean;
 }
 
 export const Header = styled.header`
@@ -22,7 +22,8 @@ export const Header = styled.header`
 
 export const ButtonNav = styled(ButtonToggleNav)<RotateIcon>`
   margin: -10px;
-  transform: scale(0.5) rotate(${({ iconRotate }) => (iconRotate ? 0 : 180)}deg);
+  transform: scale(0.5)
+    rotate(${({ $iconRotate }) => ($iconRotate ? 0 : 180)}deg);
   fill: ${({ theme }) => theme.colorText};
   cursor: pointer;
 `;
