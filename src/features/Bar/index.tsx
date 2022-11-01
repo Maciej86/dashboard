@@ -1,9 +1,14 @@
-import { Header } from "./styled";
+import { Header, ButtonNav } from "./styled";
 
 export const Bar = () => {
   return (
     <Header>
-      <p>Tutaj będzie Logo i coś tam.</p>
+      <div>
+        <ButtonNav />
+      </div>
+      <div>
+        Witaj <b>Maciej</b>
+      </div>
     </Header>
   );
 };
