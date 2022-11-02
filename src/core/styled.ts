@@ -7,7 +7,7 @@ export const Wrapper = styled.main`
 `;
 
 export const Section = styled.section`
-  height: 100%;
+  height: calc(100% - ${size.heightBar}px);
   background: ${({ theme }) => theme.backgroundApp};
   margin-top: ${size.heightBar}px;
   margin-left: 300px;
