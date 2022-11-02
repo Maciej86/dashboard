@@ -9,7 +9,7 @@ export const Bar = () => {
       <div>
         <ButtonNav
           onClick={() => setToggleNav((toggleNav) => !toggleNav)}
-          iconRotate={toggleNav}
+          $iconRotate={toggleNav}
         />
       </div>
       <div>
