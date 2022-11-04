@@ -1,9 +1,5 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectToggleNav as selectToggleNavState,
-  setToggleNav,
-} from "./sliceBar";
+import { selectToggleNavState, setToggleNav } from "./sliceBar";
 import { Header, ButtonNav } from "./styled";
 
 export const Bar = () => {
@@ -15,7 +11,7 @@ export const Bar = () => {
       <div>
         <ButtonNav
           onClick={() => dispatch(setToggleNav())}
-          $iconRotate={toggleNav.toggle}
+          $iconRotate={toggleNav}
         />
       </div>
       <div>
