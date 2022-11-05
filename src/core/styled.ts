@@ -24,5 +24,8 @@ export const Dashboard = styled.section<AnimationSection>`
 `;
 
 export const Section = styled.section`
+  width: 95%;
+  max-width: 1450px;
+  margin: 0 auto;
   padding: 20px;
 `;
