@@ -8,18 +8,30 @@ const color = {
   gray_900: "rgb(69, 69, 69)",
 };
 
-export const size = {
+const size = {
   widthNawigation: 300,
   heightBar: 70,
 };
 
+const media = {
+  hiddenNav: 1000,
+};
+
 export const themeDefault = {
-  backgroundApp: color.gray_100,
-  backgroundBar: color.white,
-  borderBottomBar: color.gray_400,
-  backgroundNav: color.pickledBluewood_100,
-  backgroundLogo: color.pickledBluewood_200,
-  borderBotomLogo: color.pickledBluewood_300,
-  colorText: color.gray_900,
-  colorTextLogo: color.white,
+  color: {
+    backgroundApp: color.gray_100,
+    backgroundBar: color.white,
+    borderBottomBar: color.gray_400,
+    backgroundNav: color.pickledBluewood_100,
+    backgroundLogo: color.pickledBluewood_200,
+    borderBotomLogo: color.pickledBluewood_300,
+    colorText: color.gray_900,
+    colorTextLogo: color.white,
+  },
+  size: {
+    ...size,
+  },
+  media: {
+    ...media,
+  },
 };

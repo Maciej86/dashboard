@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import { size } from "../../core/theme";
+import styled from "styled-components";
 import { ReactComponent as ButtonToggleNav } from "./toggle_nav.svg";
 
 interface AnimationHeader {
@@ -8,19 +7,20 @@ interface AnimationHeader {
 
 export const Header = styled.header<AnimationHeader>`
   position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: ${size.heightBar}px;
+  min-height: ${({ theme }) => theme.size.heightBar}px;
   padding: 0 20px;
-  background: ${({ theme }) => theme.backgroundBar};
-  border-bottom: 1px solid ${({ theme }) => theme.borderBottomBar};
-  color: ${({ theme }) => theme.colorText};
+  background: ${({ theme }) => theme.color.backgroundBar};
+  border-bottom: 1px solid ${({ theme }) => theme.color.borderBottomBar};
+  color: ${({ theme }) => theme.color.colorText};
 `;
 
 export const ButtonNav = styled(ButtonToggleNav)<AnimationHeader>`
   margin: -10px;
   transform: scale(0.5) rotate(${({ $toggleNav }) => ($toggleNav ? 0 : 180)}deg);
-  fill: ${({ theme }) => theme.colorText};
+  fill: ${({ theme }) => theme.color.colorText};
   cursor: pointer;
 `;

@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { size } from "./theme";
 interface AnimationSection {
   $toggleNav: boolean;
 }
@@ -11,7 +10,7 @@ export const Wrapper = styled.main`
 
 export const Dashboard = styled.section<AnimationSection>`
   height: 100%;
-  background: ${({ theme }) => theme.backgroundApp};
+  background: ${({ theme }) => theme.color.backgroundApp};
   margin-left: 300px;
   transition: margin-left 0.5s, width 0.5s;
 
@@ -21,6 +20,11 @@ export const Dashboard = styled.section<AnimationSection>`
       margin-left: 0;
       width: 100%;
     `}
+
+  @media (max-width: ${({ theme }) => theme.media.hiddenNav}px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `;
 
 export const Section = styled.section`
