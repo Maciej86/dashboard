@@ -64,4 +64,8 @@ export const MobileMask = styled.div<AnimationNavigation>`
   background: ${({ theme }) => theme.color.backgroundNav};
   opacity: 0.7;
   z-index: 10;
+
+  @media (min-width: ${({ theme }) => theme.media.hiddenNav}px) {
+    display: none;
+  }
 `;
