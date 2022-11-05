@@ -7,7 +7,7 @@ export const Bar = () => {
   const toggleNav = useSelector(selectToggleNavState);
 
   return (
-    <Header>
+    <Header $toggleNav={toggleNav}>
       <div>
         <ButtonNav
           onClick={() => dispatch(setToggleNav())}
