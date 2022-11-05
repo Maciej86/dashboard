@@ -6,6 +6,7 @@ const color = {
   pickledBluewood_300: "rgb(35, 51, 66)",
   gray_100: "rgb(235, 237, 239)",
   gray_400: "rgb(189, 189, 189)",
+  gray_600: "rgb(109, 109, 109)",
   gray_900: "rgb(69, 69, 69)",
 };
 
@@ -34,6 +35,7 @@ export const themeDefault = {
     borderBotomLogo: color.pickledBluewood_300,
     colorText: color.gray_900,
     colorTextLogo: color.white,
+    colorTextDescription: color.gray_600,
     boxShadow: color.gray_900,
   },
   size: {
