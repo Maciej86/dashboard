@@ -9,12 +9,10 @@ export const Wrapper = styled.main`
   overflow: auto;
 `;
 
-export const Section = styled.section<AnimationSection>`
-  height: calc(100% - ${size.heightBar}px);
+export const Dashboard = styled.section<AnimationSection>`
+  height: 100%;
   background: ${({ theme }) => theme.backgroundApp};
-  margin-top: ${size.heightBar}px;
   margin-left: 300px;
-  padding: 20px;
   transition: margin-left 0.5s, width 0.5s;
 
   ${({ $toggleNav }) =>
@@ -23,4 +21,8 @@ export const Section = styled.section<AnimationSection>`
       margin-left: 0;
       width: 100%;
     `}
+`;
+
+export const Section = styled.section`
+  padding: 20px;
 `;

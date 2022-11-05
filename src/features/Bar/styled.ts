@@ -7,25 +7,15 @@ interface AnimationHeader {
 }
 
 export const Header = styled.header<AnimationHeader>`
-  position: fixed;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - ${size.widthNawigation}px);
   height: ${size.heightBar}px;
-  margin-left: ${size.widthNawigation}px;
   padding: 0 20px;
   background: ${({ theme }) => theme.backgroundBar};
   border-bottom: 1px solid ${({ theme }) => theme.borderBottomBar};
   color: ${({ theme }) => theme.colorText};
-  transition: margin-left 0.5s, width 0.5s;
-
-  ${({ $toggleNav }) =>
-    $toggleNav &&
-    css`
-      margin-left: 0;
-      width: 100%;
-    `}
 `;
 
 export const ButtonNav = styled(ButtonToggleNav)<AnimationHeader>`

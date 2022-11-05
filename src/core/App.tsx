@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { selectToggleNavState } from "../features/Bar/sliceBar";
 import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
-import { Section, Wrapper } from "./styled";
+import { Wrapper, Dashboard, Section } from "./styled";
 import { themeDefault } from "./theme";
 
 export const App = () => {
@@ -13,8 +13,10 @@ export const App = () => {
     <ThemeProvider theme={themeDefault}>
       <Wrapper>
         <Navigation />
-        <Bar />
-        <Section $toggleNav={toggleNav}>Tutaj treść całego pulpitu</Section>
+        <Dashboard $toggleNav={toggleNav}>
+          <Bar />
+          <Section>Tutaj treść całego pulpitu</Section>
+        </Dashboard>
       </Wrapper>
     </ThemeProvider>
   );
