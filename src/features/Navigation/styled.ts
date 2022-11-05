@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { size } from "../../core/theme";
 import { ReactComponent as LogoSvg } from "./logo.svg";
 
@@ -6,24 +6,19 @@ interface AnimationNavigation {
   $toggleNav: boolean;
 }
 
-const hiddenNavigation = keyframes`
-  0%{ margin-left: 0; }
-  100% { margin-left: -${size.widthNawigation}px; }
-`;
-
-const showNavigation = keyframes`
-  0%{ margin-left: -${size.widthNawigation}px; }
-  100% { margin-left: 0 }
-`;
-
 export const Nav = styled.nav<AnimationNavigation>`
   position: fixed;
   width: 300px;
   height: 100%;
   background: ${({ theme }) => theme.backgroundNav};
-  animation: ${({ $toggleNav }) =>
-      $toggleNav ? hiddenNavigation : showNavigation}
-    0.7s ease-out forwards;
+  transform: translateX(0);
+  transition: transform 0.5s;
+
+  ${({ $toggleNav }) =>
+    $toggleNav &&
+    css`
+      transform: translateX(-${size.widthNawigation}px); ;
+    `}
 `;
 
 export const Logo = styled.div`
