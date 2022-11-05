@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
+import { Name } from "../features/Name";
 import { selectToggleNavState } from "../features/Bar/sliceBar";
 import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
@@ -11,6 +12,7 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={themeDefault}>
+      <Name />
       <Wrapper>
         <Navigation />
         <Dashboard $toggleNav={toggleNav}>

@@ -1,6 +1,7 @@
 const color = {
   white: "rgb(255, 255, 255)",
   pickledBluewood_100: "rgb(52, 73, 94)",
+  pickledBluewoodAlpha_100: "rgba(52, 73, 94, .8)",
   pickledBluewood_200: "rgb(44, 62, 80)",
   pickledBluewood_300: "rgb(35, 51, 66)",
   gray_100: "rgb(235, 237, 239)",
@@ -24,6 +25,8 @@ const speed = {
 export const themeDefault = {
   color: {
     backgroundApp: color.gray_100,
+    backgroundNameAlpha: color.pickledBluewoodAlpha_100,
+    backgroundName: color.white,
     backgroundBar: color.white,
     borderBottomBar: color.gray_400,
     backgroundNav: color.pickledBluewood_100,
@@ -31,6 +34,7 @@ export const themeDefault = {
     borderBotomLogo: color.pickledBluewood_300,
     colorText: color.gray_900,
     colorTextLogo: color.white,
+    boxShadow: color.gray_900,
   },
   size: {
     ...size,
