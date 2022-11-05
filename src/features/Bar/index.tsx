@@ -11,7 +11,7 @@ export const Bar = () => {
       <div>
         <ButtonNav
           onClick={() => dispatch(setToggleNav())}
-          $iconRotate={toggleNav}
+          $toggleNav={toggleNav}
         />
       </div>
       <div>
