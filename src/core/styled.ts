@@ -12,7 +12,8 @@ export const Dashboard = styled.section<AnimationSection>`
   height: 100%;
   background: ${({ theme }) => theme.color.backgroundApp};
   margin-left: 300px;
-  transition: margin-left 0.5s, width 0.5s;
+  transition: margin-left ${({ theme }) => theme.speed.speedNav}s,
+    width ${({ theme }) => theme.speed.speedNav}s;
 
   ${({ $toggleNav }) =>
     $toggleNav &&

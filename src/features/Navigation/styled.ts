@@ -11,8 +11,8 @@ export const Nav = styled.nav<AnimationNavigation>`
   height: 100%;
   background: ${({ theme }) => theme.color.backgroundNav};
   transform: translateX(0);
-  transition: transform 0.5s;
-  z-index: 10;
+  transition: transform ${({ theme }) => theme.speed.speedNav}s;
+  z-index: 20;
 
   ${({ $toggleNav }) =>
     $toggleNav &&
@@ -43,7 +43,7 @@ export const Logo = styled.div`
 export const LogoIcon = styled(LogoSvg)`
   margin-left: -30px;
   transform: scale(0.6);
-  fill: ${({ theme }) => theme.color.colorTextLogo}; ;
+  fill: ${({ theme }) => theme.color.colorTextLogo};
 `;
 
 export const LogoTitle = styled.h1`
@@ -52,4 +52,16 @@ export const LogoTitle = styled.h1`
   font-size: 27px;
   font-weight: 500;
   color: ${({ theme }) => theme.color.colorTextLogo};
+`;
+
+export const MobileMask = styled.div<AnimationNavigation>`
+  position: absolute;
+  display: ${({ $toggleNav }) => ($toggleNav ? "block" : "none")};
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: ${({ theme }) => theme.color.backgroundNav};
+  opacity: 0.7;
+  z-index: 10;
 `;

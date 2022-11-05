@@ -17,6 +17,10 @@ const media = {
   hiddenNav: 1000,
 };
 
+const speed = {
+  speedNav: 0.3,
+};
+
 export const themeDefault = {
   color: {
     backgroundApp: color.gray_100,
@@ -33,5 +37,8 @@ export const themeDefault = {
   },
   media: {
     ...media,
+  },
+  speed: {
+    ...speed,
   },
 };
