@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import store from "./core/store";
 import { App } from "./core/App";
 import { Normalize } from "styled-normalize";
 import { GlobalStyle } from "./core/GlobalStyle";
@@ -10,9 +12,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Normalize />
-    <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <Normalize />
+      <GlobalStyle />
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

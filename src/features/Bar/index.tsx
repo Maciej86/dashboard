@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectToggleNavState, setToggleNav } from "./sliceBar";
 import { Header, ButtonNav } from "./styled";
 
 export const Bar = () => {
-  const [toggleNav, setToggleNav] = useState(false);
+  const dispatch = useDispatch();
+  const toggleNav = useSelector(selectToggleNavState);
 
   return (
-    <Header>
+    <Header $toggleNav={toggleNav}>
       <div>
         <ButtonNav
-          onClick={() => setToggleNav((toggleNav) => !toggleNav)}
-          $iconRotate={toggleNav}
+          onClick={() => dispatch(setToggleNav())}
+          $toggleNav={toggleNav}
         />
       </div>
       <div>
