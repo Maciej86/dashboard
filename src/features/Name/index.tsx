@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { ButtonCancel, ButtonConfirm } from "../../common/Button";
 import { fetchNewName } from "./sliceName";
 import { Wrapper, Window, Title, Description } from "./styled";
 
@@ -29,7 +30,8 @@ export const Name = () => {
             onChange={({ target }) => setUserName(target.value)}
           />
           <div>
-            <button>Dodaj</button>
+            <ButtonConfirm text={"Dodaj"} />
+            <ButtonCancel text={"Anuluj"} />
           </div>
         </form>
         <Description>
