@@ -32,7 +32,7 @@ export const Name = () => {
           />
           <Buttons>
             <ButtonConfirm>Dodaj</ButtonConfirm>
-            <ButtonCancel>Anuluj</ButtonCancel>
+            <ButtonCancel onClick={() => setUserName("")}>Anuluj</ButtonCancel>
           </Buttons>
         </From>
         <Description>
