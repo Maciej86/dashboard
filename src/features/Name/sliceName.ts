@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../core/store";
-import { getThemeInLocalStorage } from "../../core/saveLocalStorage";
+import { getDataInLocalStorage } from "../../core/saveLocalStorage";
 
 interface PersonName {
   userName: string;
 }
 
 const initialName: PersonName = {
-  userName: getThemeInLocalStorage("userNameStore"),
+  userName: getDataInLocalStorage("userNameStore"),
 };
 
 const nameSlice = createSlice({
