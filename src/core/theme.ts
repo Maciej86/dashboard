@@ -45,6 +45,8 @@ export const themeDefault = {
     buttonConfirmBgHover: color.jungleGreen_200,
     buttonCancelBg: color.gray_400,
     buttonCancelBgHover: color.gray_500,
+    borderInput: color.gray_500,
+    borderInputHover: color.gray_900,
   },
   size: {
     ...size,

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ButtonCancel, ButtonConfirm } from "../../common/Button";
 import { addNewName } from "./sliceName";
-import { Wrapper, Window, Title, Description } from "./styled";
+import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
+import { Wrapper, Window, Title, Description, Buttons, From } from "./styled";
+import { InputText } from "../../common/Input/styled";
 
 export const Name = () => {
   const [userName, setUserName] = useState("");
@@ -23,17 +24,17 @@ export const Name = () => {
     <Wrapper>
       <Window>
         <Title>Podaj imię</Title>
-        <form onSubmit={onFromSubmit}>
-          <input
+        <From onSubmit={onFromSubmit}>
+          <InputText
             type="text"
             value={userName}
             onChange={({ target }) => setUserName(target.value)}
           />
-          <div>
-            <ButtonConfirm text={"Dodaj"} />
-            <ButtonCancel text={"Anuluj"} />
-          </div>
-        </form>
+          <Buttons>
+            <ButtonConfirm>Dodaj</ButtonConfirm>
+            <ButtonCancel>Anuluj</ButtonCancel>
+          </Buttons>
+        </From>
         <Description>
           Wszystkie ustawienia oraz dane zostaną zapisane lokalnie na Twoim
           urządzeniu. Żadne informacje nie są wysyłane na jakikolwiek serwer.

@@ -8,7 +8,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export const ButtonOk = styled(Button)`
+export const ButtonConfirm = styled(Button)`
   background: ${({ theme }) => theme.color.buttonConfirmBg};
   color: ${({ theme }) => theme.color.colorTextWhite};
 
@@ -17,7 +17,7 @@ export const ButtonOk = styled(Button)`
   }
 `;
 
-export const ButtonAnnul = styled(Button)`
+export const ButtonCancel = styled(Button)`
   background: ${({ theme }) => theme.color.buttonCancelBg};
   color: ${({ theme }) => theme.color.colorTextBasic};
 
