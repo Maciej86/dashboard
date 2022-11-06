@@ -9,9 +9,10 @@ export const Wrapper = styled.main`
 `;
 
 export const Dashboard = styled.section<AnimationSection>`
+  width: calc(100% - ${({ theme }) => theme.size.widthNawigation}px);
   height: 100%;
   background: ${({ theme }) => theme.color.backgroundApp};
-  margin-left: 300px;
+  margin-left: ${({ theme }) => theme.size.widthNawigation}px;
   transition: margin-left ${({ theme }) => theme.speed.speedNav}s,
     width ${({ theme }) => theme.speed.speedNav}s;
 
