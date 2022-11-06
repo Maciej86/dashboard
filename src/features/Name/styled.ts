@@ -22,6 +22,13 @@ export const Window = styled.div`
   box-shadow: 0 0 15px ${({ theme }) => theme.color.boxShadow};
 `;
 
+export const From = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Title = styled.p`
   margin: 0;
   font-size: 20px;
@@ -33,4 +40,11 @@ export const Description = styled.p`
   font-size: 14px;
   line-height: 1;
   color: ${({ theme }) => theme.color.colorTextDescription};
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 `;

@@ -14,13 +14,13 @@ const nameSlice = createSlice({
   name: "namePerson",
   initialState: initialName,
   reducers: {
-    fetchNewName: (state, action: PayloadAction<string>) => {
+    addNewName: (state, action: PayloadAction<string>) => {
       state.userName = action.payload;
     },
   },
 });
 
-export const { fetchNewName } = nameSlice.actions;
+export const { addNewName } = nameSlice.actions;
 
 export const selectName = (state: RootState) => state.userNameStore;
 export const selectNameState = (state: RootState) => selectName(state).userName;
