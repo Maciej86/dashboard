@@ -6,13 +6,15 @@ import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
 import { Wrapper, Dashboard, Section } from "./styled";
 import { themeDefault } from "./theme";
+import { selectNameState } from "../features/Name/sliceName";
 
 export const App = () => {
   const toggleNav = useSelector(selectToggleNavState);
+  const userName = useSelector(selectNameState);
 
   return (
     <ThemeProvider theme={themeDefault}>
-      <Name />
+      {Array.isArray(userName) ? <Name /> : ""}
       <Wrapper>
         <Navigation />
         <Dashboard $toggleNav={toggleNav}>
