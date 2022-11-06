@@ -4,5 +4,5 @@ export const saveDataInLocalStorage = (dataLocalStorage: Array<string>) =>
     JSON.stringify(dataLocalStorage[0])
   );
 
-export const getThemeInLocalStorage = (localStorageKey: string) =>
+export const getDataInLocalStorage = (localStorageKey: string) =>
   JSON.parse(localStorage.getItem(localStorageKey) || "[]");
