@@ -6,10 +6,11 @@ const color = {
   pickledBluewood_300: "rgb(35, 51, 66)",
   gray_100: "rgb(235, 237, 239)",
   gray_400: "rgb(189, 189, 189)",
+  gray_500: "rgb(149, 149, 149)",
   gray_600: "rgb(109, 109, 109)",
   gray_900: "rgb(69, 69, 69)",
   jungleGreen_100: "rgb(46, 184, 92)",
-  jungleGreen_200: "rgb(43, 171, 85)",
+  jungleGreen_200: "rgb(40, 161, 80)",
 };
 
 const size = {
@@ -42,6 +43,8 @@ export const themeDefault = {
     boxShadow: color.gray_900,
     buttonConfirmBg: color.jungleGreen_100,
     buttonConfirmBgHover: color.jungleGreen_200,
+    buttonCancelBg: color.gray_400,
+    buttonCancelBgHover: color.gray_500,
   },
   size: {
     ...size,
