@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../core/store";
-import { getThemeInLocalStorage } from "./saveLocalStorage";
+import { getThemeInLocalStorage } from "../../core/saveLocalStorage";
 
 interface PersonName {
   userName: string;
 }
 
 const initialName: PersonName = {
-  userName: getThemeInLocalStorage(),
+  userName: getThemeInLocalStorage("userNameStore"),
 };
 
 const nameSlice = createSlice({
@@ -22,7 +22,7 @@ const nameSlice = createSlice({
 
 export const { fetchNewName } = nameSlice.actions;
 
-export const selectName = (state: RootState) => state.newName;
+export const selectName = (state: RootState) => state.userNameStore;
 export const selectNameState = (state: RootState) => selectName(state).userName;
 
 export default nameSlice.reducer;

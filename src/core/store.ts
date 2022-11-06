@@ -8,8 +8,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    toggleNav: toggleNavSlice,
-    newName: nameSlice,
+    toggleNavStore: toggleNavSlice,
+    userNameStore: nameSlice,
   },
 
   middleware: [sagaMiddleware],

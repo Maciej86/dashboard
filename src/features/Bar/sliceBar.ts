@@ -19,7 +19,7 @@ const toggleNavSlice = createSlice({
   },
 });
 
-export const selectToggleNav = (state: RootState) => state.toggleNav;
+export const selectToggleNav = (state: RootState) => state.toggleNavStore;
 export const selectToggleNavState = (state: RootState) =>
   selectToggleNav(state).toggle;
 
