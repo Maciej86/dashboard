@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import { selectNameState } from "../Name/sliceName";
 import { selectToggleNavState, setToggleNav } from "./sliceBar";
 import { Header, ButtonNav } from "./styled";
 
 export const Bar = () => {
   const dispatch = useDispatch();
   const toggleNav = useSelector(selectToggleNavState);
+  const userName = useSelector(selectNameState);
 
   return (
     <Header $toggleNav={toggleNav}>
@@ -15,7 +17,7 @@ export const Bar = () => {
         />
       </div>
       <div>
-        Witaj <b>Maciej</b>
+        Witaj <b>{userName}</b>
       </div>
     </Header>
   );
