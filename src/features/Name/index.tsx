@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button";
-import { fetchNewName } from "./sliceName";
+import { addNewName } from "./sliceName";
 import { Wrapper, Window, Title, Description } from "./styled";
 
 export const Name = () => {
@@ -16,7 +16,7 @@ export const Name = () => {
     }
 
     const trimUserName = userName.trim();
-    dispatch(fetchNewName(trimUserName));
+    dispatch(addNewName(trimUserName));
   };
 
   return (
