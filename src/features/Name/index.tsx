@@ -2,8 +2,15 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewName } from "./sliceName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
-import { Wrapper, Window, Title, Description, Buttons, From } from "./styled";
-import { InputText } from "../../common/Input/styled";
+import {
+  Wrapper,
+  Window,
+  Title,
+  Description,
+  Buttons,
+  From,
+  Input,
+} from "./styled";
 
 export const Name = () => {
   const [userName, setUserName] = useState("");
@@ -25,9 +32,10 @@ export const Name = () => {
       <Window>
         <Title>Podaj imię</Title>
         <From onSubmit={onFromSubmit}>
-          <InputText
+          <Input
             type="text"
             value={userName}
+            maxLength={10}
             onChange={({ target }) => setUserName(target.value)}
           />
           <Buttons>

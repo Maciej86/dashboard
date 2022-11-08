@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { InputText } from "../../common/Input/styled";
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -41,6 +42,15 @@ export const Title = styled.p`
   margin: 0;
   font-size: 20px;
   font-weight: 500;
+`;
+
+export const Input = styled(InputText)`
+  max-width: 200px;
+  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.media.height350}px) {
+    max-width: 100%;
+  }
 `;
 
 export const Buttons = styled.div`
