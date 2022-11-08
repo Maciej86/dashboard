@@ -60,9 +60,5 @@ export const Buttons = styled.div`
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
-
-    & > button {
-      width: 100%;
-    }
   }
 `;
