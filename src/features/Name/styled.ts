@@ -43,13 +43,6 @@ export const Title = styled.p`
   font-weight: 500;
 `;
 
-export const Description = styled.p`
-  margin-top: 40px;
-  font-size: 14px;
-  line-height: 1;
-  color: ${({ theme }) => theme.color.colorTextDescription};
-`;
-
 export const Buttons = styled.div`
   display: flex;
   justify-content: center;
@@ -61,4 +54,11 @@ export const Buttons = styled.div`
     width: 100%;
     margin-top: 10px;
   }
+`;
+
+export const Description = styled.p`
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 1;
+  color: ${({ theme }) => theme.color.colorTextDescription};
 `;
