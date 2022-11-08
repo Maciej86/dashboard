@@ -21,7 +21,7 @@ export const Window = styled.div`
   text-align: center;
   box-shadow: 0 0 15px ${({ theme }) => theme.color.boxShadow};
 
-  @media (max-width: ${({ theme }) => theme.size.height800}px) {
+  @media (max-width: ${({ theme }) => theme.media.height800}px) {
     width: 80%;
   }
 `;
@@ -32,7 +32,7 @@ export const From = styled.form`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.size.height800}px) {
+  @media (max-width: ${({ theme }) => theme.media.height800}px) {
     width: 100%;
   }
 `;
@@ -56,7 +56,7 @@ export const Buttons = styled.div`
   gap: 10px;
   margin-top: 20px;
 
-  @media (max-width: ${({ theme }) => theme.size.height350}px) {
+  @media (max-width: ${({ theme }) => theme.media.height350}px) {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
