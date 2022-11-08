@@ -17,7 +17,6 @@ export const Window = styled.div`
   padding: 30px 20px;
   background: ${({ theme }) => theme.color.backgroundName};
   border-radius: 5px;
-  font-size: 20px;
   font-weight: 500;
   text-align: center;
   box-shadow: 0 0 15px ${({ theme }) => theme.color.boxShadow};
@@ -25,6 +24,12 @@ export const Window = styled.div`
   @media (max-width: ${({ theme }) => theme.media.height800}px) {
     width: 80%;
   }
+`;
+
+export const Title = styled.p`
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
 `;
 
 export const From = styled.form`
@@ -36,12 +41,6 @@ export const From = styled.form`
   @media (max-width: ${({ theme }) => theme.media.height800}px) {
     width: 100%;
   }
-`;
-
-export const Title = styled.p`
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
 `;
 
 export const Input = styled(InputText)`
