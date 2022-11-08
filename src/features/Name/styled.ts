@@ -20,6 +20,10 @@ export const Window = styled.div`
   font-weight: 500;
   text-align: center;
   box-shadow: 0 0 15px ${({ theme }) => theme.color.boxShadow};
+
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 `;
 
 export const From = styled.form`
@@ -27,6 +31,10 @@ export const From = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.p`
@@ -47,4 +55,14 @@ export const Buttons = styled.div`
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+
+    & > button {
+      width: 100%;
+    }
+  }
 `;

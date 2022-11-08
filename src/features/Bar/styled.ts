@@ -23,4 +23,9 @@ export const ButtonNav = styled(ButtonToggleNav)<AnimationHeader>`
   transform: scale(0.5) rotate(${({ $toggleNav }) => ($toggleNav ? 0 : 180)}deg);
   fill: ${({ theme }) => theme.color.colorTextBasic};
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.media.hiddenNav}px) {
+    transform: scale(0.5)
+      rotate(${({ $toggleNav }) => ($toggleNav ? 180 : 0)}deg);
+  }
 `;
