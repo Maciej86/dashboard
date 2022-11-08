@@ -20,6 +20,10 @@ export const Window = styled.div`
   font-weight: 500;
   text-align: center;
   box-shadow: 0 0 15px ${({ theme }) => theme.color.boxShadow};
+
+  @media (max-width: ${({ theme }) => theme.media.height800}px) {
+    width: 80%;
+  }
 `;
 
 export const From = styled.form`
@@ -27,6 +31,10 @@ export const From = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.media.height800}px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.p`
@@ -35,16 +43,22 @@ export const Title = styled.p`
   font-weight: 500;
 `;
 
-export const Description = styled.p`
-  margin-top: 40px;
-  font-size: 14px;
-  line-height: 1;
-  color: ${({ theme }) => theme.color.colorTextDescription};
-`;
-
 export const Buttons = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+
+  @media (max-width: ${({ theme }) => theme.media.height350}px) {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+`;
+
+export const Description = styled.p`
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 1;
+  color: ${({ theme }) => theme.color.colorTextDescription};
 `;
