@@ -20,6 +20,8 @@ const size = {
 
 const media = {
   hiddenNav: 1000,
+  height800: 800,
+  height350: 350,
 } as const;
 
 const speed = {
