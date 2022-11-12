@@ -4,8 +4,7 @@ import { addNewName, selectNameState } from "./sliceName";
 
 function* addNewNameHendler() {
   const userName: string = yield select(selectNameState);
-  const dataLocalStorage: Array<string> = [userName, "userNameStore"];
-  yield call(saveDataInLocalStorage, dataLocalStorage);
+  yield call(saveDataInLocalStorage, userName, "userNameStore");
 }
 
 export function* nameSaga() {
