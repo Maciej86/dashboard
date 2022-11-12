@@ -15,24 +15,26 @@ import { RenderName } from "./RandomName";
 
 export const Name = () => {
   const [userName, setUserName] = useState("");
-  const [cancelName, setCancelName] = useState(false);
+  const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
 
   const onFromSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (userName !== "") {
-      const trimUserName = userName.trim();
-      dispatch(addNewName(trimUserName));
+    if (userName === "") {
+      return alert(
+        "Tutaj zaznaczenie pola input na czerowno lub jakiś komunikat."
+      );
     }
 
-    setCancelName(true);
+    const trimUserName = userName.trim();
+    dispatch(addNewName(trimUserName));
   };
 
   return (
     <Wrapper>
       <Window>
-        {cancelName ? (
+        {validateName ? (
           <RenderName />
         ) : (
           <>
@@ -46,7 +48,7 @@ export const Name = () => {
               />
               <Buttons>
                 <ButtonConfirm>Dodaj</ButtonConfirm>
-                <ButtonCancel onClick={() => setUserName("")}>
+                <ButtonCancel onClick={() => setValidateName(true)}>
                   Anuluj
                 </ButtonCancel>
               </Buttons>
