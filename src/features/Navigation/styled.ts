@@ -90,7 +90,8 @@ export const Item = styled.li`
 export const ItemLink = styled(Link)`
   display: flex;
   align-items: center;
-  padding: 7px 0 7px 10px;
+  gap: 10px;
+  padding: 7px;
   text-decoration: none;
   color: ${({ theme }) => theme.color.colorTextNav};
   transition: background 0.5s;
