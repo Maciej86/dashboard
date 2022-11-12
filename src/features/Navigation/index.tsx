@@ -11,6 +11,7 @@ import {
 } from "./styled";
 import { ReactComponent as SettingsIcon } from "./images/settings.svg";
 import { ReactComponent as HomeIcon } from "./images/home.svg";
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export const Navigation = () => {
           </Item>
           <Item>
             <SettingsIcon />
-            Ustawienia
+            <Link to={"settings"}>Ustawienia</Link>
           </Item>
         </MenuItems>
       </Nav>
