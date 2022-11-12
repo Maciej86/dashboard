@@ -8,10 +8,11 @@ import {
   MobileMask,
   MenuItems,
   Item,
+  ItemLink,
 } from "./styled";
 import { ReactComponent as SettingsIcon } from "./images/settings.svg";
 import { ReactComponent as HomeIcon } from "./images/home.svg";
-import { Link } from "react-router-dom";
+import { nanoid } from "@reduxjs/toolkit";
 
 export const Navigation = () => {
   const dispatch = useDispatch();
@@ -25,13 +26,17 @@ export const Navigation = () => {
           <LogoTitle>DashBoard</LogoTitle>
         </Logo>
         <MenuItems>
-          <Item>
-            <HomeIcon />
-            Pulpit
+          <Item key={nanoid()}>
+            <ItemLink to={"/dashboard"}>
+              <HomeIcon />
+              Pulpit
+            </ItemLink>
           </Item>
-          <Item>
-            <SettingsIcon />
-            <Link to={"settings"}>Ustawienia</Link>
+          <Item key={nanoid()}>
+            <ItemLink to={"settings"}>
+              <SettingsIcon />
+              Ustawienia
+            </ItemLink>
           </Item>
         </MenuItems>
       </Nav>

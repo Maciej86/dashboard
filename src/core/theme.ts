@@ -37,6 +37,7 @@ export const themeDefault = {
     backgroundBar: color.white,
     borderBottomBar: color.gray_400,
     backgroundNav: color.pickledBluewood_100,
+    backgroundNavHover: color.pickledBluewood_200,
     backgroundLogo: color.pickledBluewood_200,
     borderBotomLogo: color.pickledBluewood_300,
     colorTextBasic: color.gray_900,

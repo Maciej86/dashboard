@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as LogoSvg } from "./images/logo.svg";
 
 interface AnimationNavigation {
@@ -71,20 +72,30 @@ export const MobileMask = styled.div<AnimationNavigation>`
 `;
 
 export const MenuItems = styled.ul`
+  margin: 0;
   padding: 0;
   list-style: none;
   color: ${({ theme }) => theme.color.colorTextNav};
 `;
 
 export const Item = styled.li`
-  display: flex;
-  align-items: center;
-  padding: 7px 0 7px 10px;
-
   & path {
     transform-origin: center;
     transform: scale(0.5);
     opacity: 0.75;
     fill: ${({ theme }) => theme.color.colorTextNav};
+  }
+`;
+
+export const ItemLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 7px 0 7px 10px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.colorTextNav};
+  transition: background 0.5s;
+
+  &:hover {
+    background: ${({ theme }) => theme.color.backgroundNavHover};
   }
 `;
