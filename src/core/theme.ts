@@ -41,7 +41,7 @@ export const themeDefault = {
     borderBotomLogo: color.pickledBluewood_300,
     colorTextBasic: color.gray_900,
     colorTextWhite: color.white,
-    colorTextLogo: color.white,
+    colorTextNav: color.white,
     colorTextDescription: color.gray_600,
     boxShadow: color.gray_900,
     buttonConfirmBg: color.jungleGreen_100,

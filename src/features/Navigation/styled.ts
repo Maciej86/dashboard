@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as LogoSvg } from "./logo.svg";
+import { ReactComponent as LogoSvg } from "./images/logo.svg";
 
 interface AnimationNavigation {
   $toggleNav: boolean;
@@ -43,7 +43,7 @@ export const Logo = styled.div`
 export const LogoIcon = styled(LogoSvg)`
   margin-left: -30px;
   transform: scale(0.6);
-  fill: ${({ theme }) => theme.color.colorTextLogo};
+  fill: ${({ theme }) => theme.color.colorTextNav};
 `;
 
 export const LogoTitle = styled.h1`
@@ -51,7 +51,7 @@ export const LogoTitle = styled.h1`
   margin-left: -5px;
   font-size: 27px;
   font-weight: 500;
-  color: ${({ theme }) => theme.color.colorTextLogo};
+  color: ${({ theme }) => theme.color.colorTextNav};
 `;
 
 export const MobileMask = styled.div<AnimationNavigation>`
@@ -67,5 +67,24 @@ export const MobileMask = styled.div<AnimationNavigation>`
 
   @media (min-width: ${({ theme }) => theme.media.hiddenNav}px) {
     display: none;
+  }
+`;
+
+export const MenuItems = styled.ul`
+  padding: 0;
+  list-style: none;
+  color: ${({ theme }) => theme.color.colorTextNav};
+`;
+
+export const Item = styled.li`
+  display: flex;
+  align-items: center;
+  padding: 7px 0 7px 10px;
+
+  & path {
+    transform-origin: center;
+    transform: scale(0.5);
+    opacity: 0.75;
+    fill: ${({ theme }) => theme.color.colorTextNav};
   }
 `;
