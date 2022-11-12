@@ -1,5 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { InputText } from "../../common/Input/styled";
+
+interface ValidateName {
+  $validName: boolean;
+}
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -43,13 +47,30 @@ export const From = styled.form`
   }
 `;
 
-export const Input = styled(InputText)`
+export const Input = styled(InputText)<ValidateName>`
   max-width: 200px;
   text-align: center;
+
+  ${({ $validName }) =>
+    $validName &&
+    css`
+      border-color: ${({ theme }) => theme.color.borderInputError};
+      box-shadow: 0 0 5px ${({ theme }) => theme.color.borderInputError};
+
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+    `}
 
   @media (max-width: ${({ theme }) => theme.media.height350}px) {
     max-width: 100%;
   }
+`;
+
+export const ErrorInfo = styled.p`
+  margin: 10px 0 -5px 0;
+  color: ${({ theme }) => theme.color.colorTextDescription};
 `;
 
 export const Buttons = styled.div`

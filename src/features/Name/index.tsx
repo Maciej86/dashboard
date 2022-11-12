@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewName } from "./sliceName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
@@ -10,11 +10,13 @@ import {
   Buttons,
   From,
   Input,
+  ErrorInfo,
 } from "./styled";
 import { RenderName } from "./RandomName";
 
 export const Name = () => {
   const [userName, setUserName] = useState("");
+  const [cancelName, setCancelName] = useState(false);
   const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
 
@@ -22,9 +24,8 @@ export const Name = () => {
     event.preventDefault();
 
     if (userName === "") {
-      return alert(
-        "Tutaj zaznaczenie pola input na czerowno lub jakiś komunikat."
-      );
+      setValidateName(true);
+      return;
     }
 
     const trimUserName = userName.trim();
@@ -34,7 +35,7 @@ export const Name = () => {
   return (
     <Wrapper>
       <Window>
-        {validateName ? (
+        {cancelName ? (
           <RenderName />
         ) : (
           <>
@@ -45,10 +46,19 @@ export const Name = () => {
                 value={userName}
                 maxLength={10}
                 onChange={({ target }) => setUserName(target.value)}
+                onClick={() => setValidateName(false)}
+                $validName={validateName}
               />
+
+              {validateName ? (
+                <ErrorInfo>Proszę o podanie imienia</ErrorInfo>
+              ) : (
+                ""
+              )}
+
               <Buttons>
                 <ButtonConfirm>Dodaj</ButtonConfirm>
-                <ButtonCancel onClick={() => setValidateName(true)}>
+                <ButtonCancel onClick={() => setCancelName(true)}>
                   Anuluj
                 </ButtonCancel>
               </Buttons>
