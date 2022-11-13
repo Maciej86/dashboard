@@ -1,20 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import store from "./core/store";
-import { App } from "./core/App";
 import { Normalize } from "styled-normalize";
 import { GlobalStyle } from "./core/GlobalStyle";
 import reportWebVitals from "./reportWebVitals";
-import { Start } from "./features/Start";
-import { ErrorPage } from "./features/ErrorPage";
-import { Settings } from "./features/Settings";
 import { RouterSetings } from "./core/settingsNavigation";
 
 const root = ReactDOM.createRoot(
