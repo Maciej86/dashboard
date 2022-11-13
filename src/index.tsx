@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import store from "./core/store";
+import { RouterSetings } from "./core/settingsNavigation";
 import { Normalize } from "styled-normalize";
 import { GlobalStyle } from "./core/GlobalStyle";
 import reportWebVitals from "./reportWebVitals";
-import { RouterSetings } from "./core/settingsNavigation";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
