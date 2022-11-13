@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { selectNameState } from "../features/Name/sliceName";
 import { Name } from "../features/Name";
 import { selectToggleNavState } from "../features/Bar/sliceBar";
 import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
 import { Wrapper, Dashboard, Section } from "./styled";
 import { themeDefault } from "./theme";
-import { selectNameState } from "../features/Name/sliceName";
 
 export const App = () => {
   const toggleNav = useSelector(selectToggleNavState);
@@ -19,7 +20,9 @@ export const App = () => {
         <Navigation />
         <Dashboard $toggleNav={toggleNav}>
           <Bar />
-          <Section>Tutaj treść całego pulpitu</Section>
+          <Section>
+            <Outlet />
+          </Section>
         </Dashboard>
       </Wrapper>
     </ThemeProvider>

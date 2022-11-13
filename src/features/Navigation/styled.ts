@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as LogoSvg } from "./logo.svg";
+import { Link } from "react-router-dom";
+import { ReactComponent as LogoSvg } from "./images/logo.svg";
 
 interface AnimationNavigation {
   $toggleNav: boolean;
@@ -43,7 +44,7 @@ export const Logo = styled.div`
 export const LogoIcon = styled(LogoSvg)`
   margin-left: -30px;
   transform: scale(0.6);
-  fill: ${({ theme }) => theme.color.colorTextLogo};
+  fill: ${({ theme }) => theme.color.colorTextNav};
 `;
 
 export const LogoTitle = styled.h1`
@@ -51,7 +52,7 @@ export const LogoTitle = styled.h1`
   margin-left: -5px;
   font-size: 27px;
   font-weight: 500;
-  color: ${({ theme }) => theme.color.colorTextLogo};
+  color: ${({ theme }) => theme.color.colorTextNav};
 `;
 
 export const MobileMask = styled.div<AnimationNavigation>`
@@ -67,5 +68,35 @@ export const MobileMask = styled.div<AnimationNavigation>`
 
   @media (min-width: ${({ theme }) => theme.media.hiddenNav}px) {
     display: none;
+  }
+`;
+
+export const MenuItems = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: ${({ theme }) => theme.color.colorTextNav};
+`;
+
+export const Item = styled.li`
+  & path {
+    transform-origin: center;
+    transform: scale(0.5);
+    opacity: 0.75;
+    fill: ${({ theme }) => theme.color.colorTextNav};
+  }
+`;
+
+export const ItemLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.colorTextNav};
+  transition: background 0.5s;
+
+  &:hover {
+    background: ${({ theme }) => theme.color.backgroundNavHover};
   }
 `;

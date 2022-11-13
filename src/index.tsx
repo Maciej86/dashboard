@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { RouterProvider } from "react-router-dom";
 import store from "./core/store";
-import { App } from "./core/App";
+import { RouterSetings } from "./core/settingsNavigation";
 import { Normalize } from "styled-normalize";
 import { GlobalStyle } from "./core/GlobalStyle";
 import reportWebVitals from "./reportWebVitals";
@@ -15,7 +16,7 @@ root.render(
     <Provider store={store}>
       <Normalize />
       <GlobalStyle />
-      <App />
+      <RouterProvider router={RouterSetings} />
     </Provider>
   </React.StrictMode>
 );
