@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewName } from "./sliceName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
@@ -15,7 +15,7 @@ import {
 import { RenderName } from "./RandomName";
 
 export const Name = () => {
-  const [userName, setUserName] = useState("");
+  const userName = useRef<HTMLInputElement>(null);
   const [cancelName, setCancelName] = useState(false);
   const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
@@ -23,13 +23,16 @@ export const Name = () => {
   const onFromSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (userName === "") {
-      setValidateName(true);
-      return;
-    }
+    if (userName.current !== null) {
+      const trimUserName = userName.current.value.trim();
 
-    const trimUserName = userName.trim();
-    dispatch(addNewName(trimUserName));
+      if (trimUserName === "") {
+        setValidateName(true);
+        return;
+      }
+
+      dispatch(addNewName(trimUserName));
+    }
   };
 
   return (
@@ -43,9 +46,8 @@ export const Name = () => {
             <From onSubmit={onFromSubmit}>
               <Input
                 type="text"
-                value={userName}
+                ref={userName}
                 maxLength={10}
-                onChange={({ target }) => setUserName(target.value)}
                 onClick={() => setValidateName(false)}
                 $validName={validateName}
               />
