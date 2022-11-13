@@ -8,11 +8,12 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 
 ## Nowe funkcje
 
+- utworzenie wstępnej nawigacji
+- losowe imię w przypadku kliknięcia anuluj
 - możliwość wprowadzenia imienia
 - ukrywanie oraz pokazywanie nawigacji
 - utworzenie ogólnego układu aplikacji
 
 ## W przygotowaniu
 
-- walidacja wprowadzonego imienia
-- w przypadku kliknięcia przycisku Anuluj - wylosowanie imienia
+- edycja wprowadzonego imienia
