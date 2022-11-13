@@ -15,16 +15,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Start } from "./features/Start";
 import { ErrorPage } from "./features/ErrorPage";
 import { Settings } from "./features/Settings";
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/dashboard/" element={<App />}>
-      <Route index element={<Start />} />
-      <Route path="settings" element={<Settings />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Route>
-  )
-);
+import { RouterSetings } from "./core/settingsNavigation";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -34,7 +25,7 @@ root.render(
     <Provider store={store}>
       <Normalize />
       <GlobalStyle />
-      <RouterProvider router={router} />
+      <RouterProvider router={RouterSetings} />
     </Provider>
   </React.StrictMode>
 );
