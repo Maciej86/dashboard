@@ -1,31 +1,13 @@
-import { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addNewName, selectNameState } from "../Name/sliceName";
+import { useSelector } from "react-redux";
+import { useName } from "../../common/hooks/useName";
+import { selectNameState } from "../Name/sliceName";
 import { ButtonConfirm } from "../../common/Button/styled";
 import { Description, Tile, TileTitle } from "../../common/Tile/styled";
 import { Form, InputName } from "./styled";
 
 export const Settings = () => {
   const userNameState = useSelector(selectNameState);
-
-  const userName = useRef<HTMLInputElement>(null);
-  const [validateName, setValidateName] = useState(false);
-  const dispatch = useDispatch();
-
-  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (userName.current !== null) {
-      const trimUserName = userName.current.value.trim();
-
-      if (trimUserName === "") {
-        setValidateName(true);
-        return;
-      }
-
-      dispatch(addNewName(trimUserName));
-    }
-  };
+  const { userName, validateName, setValidateName, onFormSubmit } = useName();
 
   return (
     <Tile>
@@ -38,6 +20,7 @@ export const Settings = () => {
           type="text"
           ref={userName}
           maxLength={10}
+          onClick={() => setValidateName(false)}
           $validName={validateName}
           placeholder="Podaj nowe imię"
         />
