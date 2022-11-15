@@ -15,7 +15,7 @@ import {
 
 export const Name = () => {
   const [cancelName, setCancelName] = useState(false);
-  const { userName, validateName, setValidateName, onFormSubmit } = useName();
+  const { userName, validateName, setValidateName, onSubmitName } = useName();
 
   return (
     <Wrapper>
@@ -25,7 +25,7 @@ export const Name = () => {
         ) : (
           <>
             <Title>Podaj imię</Title>
-            <Form onSubmit={onFormSubmit}>
+            <Form onSubmit={onSubmitName}>
               <Input
                 type="text"
                 ref={userName}

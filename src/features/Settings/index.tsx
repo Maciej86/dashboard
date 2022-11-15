@@ -7,7 +7,7 @@ import { Form, InputName } from "./styled";
 
 export const Settings = () => {
   const userNameState = useSelector(selectNameState);
-  const { userName, validateName, setValidateName, onFormSubmit } = useName();
+  const { userName, validateName, setValidateName, onSubmitName } = useName();
 
   return (
     <Tile>
@@ -15,7 +15,7 @@ export const Settings = () => {
       <p>
         Twoje obecne imię to <b>{userNameState}</b>
       </p>
-      <Form onSubmit={onFormSubmit}>
+      <Form onSubmit={onSubmitName}>
         <InputName
           type="text"
           ref={userName}
