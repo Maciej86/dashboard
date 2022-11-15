@@ -8,6 +8,7 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 
 ## Nowe funkcje
 
+- możliwość edycji imienia w ustawieniach
 - utworzenie wstępnej nawigacji
 - losowe imię w przypadku kliknięcia anuluj
 - możliwość wprowadzenia imienia
@@ -16,4 +17,4 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 
 ## W przygotowaniu
 
-- edycja wprowadzonego imienia
+- informacja potwierdzająca wykonanie operacji
