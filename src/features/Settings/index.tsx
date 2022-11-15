@@ -27,7 +27,7 @@ export const Settings = () => {
         <ButtonConfirm type="submit">Zmień imię</ButtonConfirm>
       </Form>
       <Description>
-        Twoje imię jest zapisywane w pamięci podręcznej przeglądarki.
+        Twoje imię jest zapisywane w pamięci lokalnej przeglądarki.
       </Description>
     </Tile>
   );
