@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addNewName } from "./sliceName";
+import { useState } from "react";
+import { useName } from "../../common/hooks/useName";
 import { RenderName } from "./RandomName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
 import { Description } from "../../common/Tile/styled";
@@ -15,25 +14,8 @@ import {
 } from "./styled";
 
 export const Name = () => {
-  const userName = useRef<HTMLInputElement>(null);
   const [cancelName, setCancelName] = useState(false);
-  const [validateName, setValidateName] = useState(false);
-  const dispatch = useDispatch();
-
-  const onFromSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (userName.current !== null) {
-      const trimUserName = userName.current.value.trim();
-
-      if (trimUserName === "") {
-        setValidateName(true);
-        return;
-      }
-
-      dispatch(addNewName(trimUserName));
-    }
-  };
+  const { userName, validateName, setValidateName, onFormSubmit } = useName();
 
   return (
     <Wrapper>
@@ -43,13 +25,14 @@ export const Name = () => {
         ) : (
           <>
             <Title>Podaj imię</Title>
-            <Form onSubmit={onFromSubmit}>
+            <Form onSubmit={onFormSubmit}>
               <Input
                 type="text"
                 ref={userName}
                 maxLength={10}
                 onClick={() => setValidateName(false)}
                 $validName={validateName}
+                placeholder="Podaj nowe imię"
               />
 
               {validateName ? (
