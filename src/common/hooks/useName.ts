@@ -15,6 +15,7 @@ export const useName = () => {
 
       if (trimUserName === "") {
         setValidateName(true);
+        return;
       }
 
       dispatch(addNewName(trimUserName));
