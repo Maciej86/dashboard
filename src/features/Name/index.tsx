@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNewName } from "./sliceName";
+import { RenderName } from "./RandomName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
+import { Description } from "../../common/Tile/styled";
 import {
   Wrapper,
   Window,
   Title,
-  Description,
   Buttons,
-  From,
+  Form,
   Input,
   ErrorInfo,
 } from "./styled";
-import { RenderName } from "./RandomName";
 
 export const Name = () => {
   const userName = useRef<HTMLInputElement>(null);
@@ -43,7 +43,7 @@ export const Name = () => {
         ) : (
           <>
             <Title>Podaj imię</Title>
-            <From onSubmit={onFromSubmit}>
+            <Form onSubmit={onFromSubmit}>
               <Input
                 type="text"
                 ref={userName}
@@ -64,7 +64,7 @@ export const Name = () => {
                   Anuluj
                 </ButtonCancel>
               </Buttons>
-            </From>
+            </Form>
             <Description>
               Wszystkie ustawienia oraz dane zostaną zapisane lokalnie na Twoim
               urządzeniu. Żadne informacje nie są wysyłane na jakikolwiek

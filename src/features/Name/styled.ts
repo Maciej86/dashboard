@@ -32,11 +32,12 @@ export const Window = styled.div`
 
 export const Title = styled.p`
   margin: 0;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 500;
 `;
 
-export const From = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,18 +78,11 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  margin: 20px 0;
 
   @media (max-width: ${({ theme }) => theme.media.height350}px) {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
   }
-`;
-
-export const Description = styled.p`
-  margin-top: 40px;
-  font-size: 14px;
-  line-height: 1;
-  color: ${({ theme }) => theme.color.colorTextDescription};
 `;
