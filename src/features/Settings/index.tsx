@@ -7,11 +7,12 @@ import { Form, InputName } from "./styled";
 
 export const Settings = () => {
   const userNameState = useSelector(selectNameState);
+
   const userName = useRef<HTMLInputElement>(null);
   const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
 
-  const onFromSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (userName.current !== null) {
@@ -32,7 +33,7 @@ export const Settings = () => {
       <p>
         Twoje obecne imię to <b>{userNameState}</b>
       </p>
-      <Form onSubmit={onFromSubmit}>
+      <Form onSubmit={onFormSubmit}>
         <InputName
           type="text"
           ref={userName}

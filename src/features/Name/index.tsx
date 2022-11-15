@@ -20,7 +20,7 @@ export const Name = () => {
   const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
 
-  const onFromSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (userName.current !== null) {
@@ -43,7 +43,7 @@ export const Name = () => {
         ) : (
           <>
             <Title>Podaj imię</Title>
-            <Form onSubmit={onFromSubmit}>
+            <Form onSubmit={onFormSubmit}>
               <Input
                 type="text"
                 ref={userName}
