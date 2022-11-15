@@ -7,7 +7,7 @@ export const useName = () => {
   const [validateName, setValidateName] = useState(false);
   const dispatch = useDispatch();
 
-  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmitName = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (userName.current !== null) {
@@ -26,6 +26,6 @@ export const useName = () => {
     userName,
     validateName,
     setValidateName,
-    onFormSubmit,
+    onSubmitName,
   };
 };
