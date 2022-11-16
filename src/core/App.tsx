@@ -6,8 +6,9 @@ import { Name } from "../features/Name";
 import { selectToggleNavState } from "../features/Bar/sliceBar";
 import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
-import { Wrapper, Dashboard, Section } from "./styled";
 import { themeDefault } from "./theme";
+import { Popup } from "../common/Popup";
+import { Wrapper, Dashboard, Section } from "./styled";
 
 export const App = () => {
   const toggleNav = useSelector(selectToggleNavState);
@@ -24,6 +25,7 @@ export const App = () => {
             <Outlet />
           </Section>
         </Dashboard>
+        <Popup />
       </Wrapper>
     </ThemeProvider>
   );

@@ -1,3 +1,5 @@
+import { Wrapper } from "./styled";
+
 export const Popup = () => {
-  return <p>Imię zostało zmienione</p>;
+  return <Wrapper>Imię zostało zmienione</Wrapper>;
 };
