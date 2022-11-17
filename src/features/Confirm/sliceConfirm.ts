@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../core/store";
 
 interface ConfirmState {
-  status: string;
+  status: boolean;
   textConfirm: string;
   id: string;
 }
 
 const initialConfirm: ConfirmState = {
-  status: "",
+  status: false,
   textConfirm: "",
   id: "",
 };

@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface StrapStatus {
+  $status: boolean;
+}
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -18,10 +22,18 @@ export const Popup = styled.div`
   color: ${({ theme }) => theme.color.colorTextBasic};
 `;
 
-export const Strap = styled.div`
+export const Strap = styled.div<StrapStatus>`
   height: 10px;
-  background: ${({ theme }) => theme.color.okConfirm};
   border-radius: 5px 5px 0 0;
+
+  background: ${({ $status }) =>
+    $status
+      ? css`
+          ${({ theme }) => theme.color.okConfirm};
+        `
+      : css`
+          ${({ theme }) => theme.color.failedConfirm};
+        `};
 `;
 
 export const Text = styled.p`
