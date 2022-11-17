@@ -56,6 +56,8 @@ export const themeDefault = {
     borderInputError: color.red,
     backgroundTile: color.white,
     borderTile: color.gray_200,
+    backgroundConfirm: color.white,
+    okConfirm: color.jungleGreen_100,
   },
   size: {
     ...size,

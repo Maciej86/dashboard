@@ -7,7 +7,7 @@ import { selectToggleNavState } from "../features/Bar/sliceBar";
 import { Navigation } from "../features/Navigation";
 import { Bar } from "../features/Bar";
 import { themeDefault } from "./theme";
-import { Popup } from "../common/Popup";
+import { Confirm } from "../features/Confirm";
 import { Wrapper, Dashboard, Section } from "./styled";
 
 export const App = () => {
@@ -25,7 +25,7 @@ export const App = () => {
             <Outlet />
           </Section>
         </Dashboard>
-        <Popup />
+        <Confirm />
       </Wrapper>
     </ThemeProvider>
   );
