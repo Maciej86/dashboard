@@ -20,7 +20,5 @@ export const Confirm = () => {
       : setPopupArray([]);
   }, [info]);
 
-  console.log(popupArray);
-
   return <Wrapper>{popupArray}</Wrapper>;
 };
