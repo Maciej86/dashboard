@@ -9,7 +9,7 @@ export const Confirm = () => {
 
   useEffect(() => {
     info.id !== ""
-      ? setPopupArray(
+      ? setPopupArray((popupArray: any) =>
           popupArray.concat(
             <Popup key={info.id}>
               <Strap $status={info.status}></Strap>
