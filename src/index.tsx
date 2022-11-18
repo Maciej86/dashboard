@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { RouterProvider } from "react-router-dom";
+import { HashRouter, RouterProvider } from "react-router-dom";
 import store from "./core/store";
 import { RouterSetings } from "./core/settingsNavigation";
 import { Normalize } from "styled-normalize";
@@ -13,11 +13,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Normalize />
-      <GlobalStyle />
-      <RouterProvider router={RouterSetings} />
-    </Provider>
+    <HashRouter>
+      <Provider store={store}>
+        <Normalize />
+        <GlobalStyle />
+        <RouterProvider router={RouterSetings} />
+      </Provider>
+    </HashRouter>
   </React.StrictMode>
 );
 
