@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   removeAutoConfirm,
   removeConfirm,
-  selectConfirmState,
+  selectConfirm,
 } from "./sliceConfirm";
 import { Wrapper, Popup, Strap, Text } from "./styled";
 
 export const Confirm = () => {
   const dispatch = useDispatch();
-  const infoConfirm = useSelector(selectConfirmState);
+  const infoConfirm = useSelector(selectConfirm);
 
   useEffect(() => {
     const timeRemoveConfirm = setTimeout(() => {

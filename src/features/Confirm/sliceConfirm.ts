@@ -11,26 +11,24 @@ const initialConfirm: Array<ConfirmState> = [];
 
 const confirmSlice = createSlice({
   name: "confirm",
-  initialState: { initialConfirm },
+  initialState: initialConfirm,
   reducers: {
-    addConfirm: ({ initialConfirm }, action: PayloadAction<ConfirmState>) => {
-      initialConfirm.push(action.payload);
+    addConfirm: (state, action: PayloadAction<ConfirmState>) => {
+      state.push(action.payload);
     },
-    removeConfirm: ({ initialConfirm }, { payload: statusId }) => {
+    removeConfirm: (state, { payload: statusId }) => {
       const index = initialConfirm.findIndex(
         (status) => status.id === statusId
       );
-      initialConfirm.splice(index, 1);
+      state.splice(index, 1);
     },
-    removeAutoConfirm: ({ initialConfirm }) => {
-      initialConfirm.splice(0, 1);
+    removeAutoConfirm: (state) => {
+      state.splice(0, 1);
     },
   },
 });
 
 export const selectConfirm = (state: RootState) => state.confirmStore;
-export const selectConfirmState = (state: RootState) =>
-  selectConfirm(state).initialConfirm;
 
 export const { addConfirm, removeConfirm, removeAutoConfirm } =
   confirmSlice.actions;
