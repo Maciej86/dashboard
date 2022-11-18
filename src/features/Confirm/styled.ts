@@ -20,6 +20,7 @@ export const Popup = styled.div`
   font-weight: 500;
   line-height: 1.2;
   color: ${({ theme }) => theme.color.colorTextBasic};
+  cursor: pointer;
 `;
 
 export const Strap = styled.div<StrapStatus>`
