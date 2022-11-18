@@ -19,7 +19,7 @@ export const Confirm = () => {
     return () => {
       clearTimeout(timeRemoveConfirm);
     };
-  }, [infoConfirm]);
+  }, [infoConfirm, dispatch]);
 
   return (
     <Wrapper>
