@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectNameState } from "../Name/sliceName";
 import { useCurrentDate } from "./useCurrentData";
 import { selectToggleNavState, setToggleNav } from "./sliceBar";
-import { Header, ButtonNav } from "./styled";
+import { Header, ButtonNav, Clock } from "./styled";
 
 export const Bar = () => {
   const dispatch = useDispatch();
@@ -18,10 +18,10 @@ export const Bar = () => {
           $toggleNav={toggleNav}
         />
       </div>
-      <div>
-        <span>{date}</span>
+      <Clock>{date}</Clock>
+      <p>
         Witaj <b>{userName}</b>
-      </div>
+      </p>
     </Header>
   );
 };
