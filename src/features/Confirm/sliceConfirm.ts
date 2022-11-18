@@ -22,6 +22,9 @@ const confirmSlice = createSlice({
       );
       initialConfirm.splice(index, 1);
     },
+    removeAutoConfirm: ({ initialConfirm }) => {
+      initialConfirm.splice(0, 1);
+    },
   },
 });
 
@@ -29,6 +32,7 @@ export const selectConfirm = (state: RootState) => state.confirmStore;
 export const selectConfirmState = (state: RootState) =>
   selectConfirm(state).initialConfirm;
 
-export const { addConfirm, removeConfirm } = confirmSlice.actions;
+export const { addConfirm, removeConfirm, removeAutoConfirm } =
+  confirmSlice.actions;
 
 export default confirmSlice.reducer;
