@@ -6,7 +6,7 @@ import { App } from "./App";
 
 export const RouterSetings = createBrowserRouter([
   {
-    path: "/dashboard/",
+    path: "/",
     element: <App />,
     // errorElement: <ErrorPage />,
     children: [
