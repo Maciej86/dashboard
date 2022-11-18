@@ -4,15 +4,17 @@ import { selectConfirmState } from "./sliceConfirm";
 import { Wrapper, Popup, Strap, Text } from "./styled";
 
 export const Confirm = () => {
-  const info = useSelector(selectConfirmState);
-  console.log(info);
+  const infoConfirm = useSelector(selectConfirmState);
+  console.log(infoConfirm);
 
   return (
     <Wrapper>
-      <Popup>
-        <Strap $status={true}></Strap>
-        <Text></Text>
-      </Popup>
+      {infoConfirm.map((info) => (
+        <Popup key={info.id}>
+          <Strap $status={info.status}></Strap>
+          <Text>{info.textConfirm}</Text>
+        </Popup>
+      ))}
     </Wrapper>
   );
 };
