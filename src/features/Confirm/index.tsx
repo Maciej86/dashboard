@@ -1,24 +1,18 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectConfirm } from "./sliceConfirm";
+import { selectConfirmState } from "./sliceConfirm";
 import { Wrapper, Popup, Strap, Text } from "./styled";
 
 export const Confirm = () => {
-  const info = useSelector(selectConfirm);
-  const [popupArray, setPopupArray] = useState<any>([]);
+  const info = useSelector(selectConfirmState);
+  console.log(info);
 
-  useEffect(() => {
-    info.id !== ""
-      ? setPopupArray((popupArray: any) =>
-          popupArray.concat(
-            <Popup key={info.id}>
-              <Strap $status={info.status}></Strap>
-              <Text>{info.textConfirm}</Text>
-            </Popup>
-          )
-        )
-      : setPopupArray([]);
-  }, [info]);
-
-  return <Wrapper>{popupArray}</Wrapper>;
+  return (
+    <Wrapper>
+      <Popup>
+        <Strap $status={true}></Strap>
+        <Text></Text>
+      </Popup>
+    </Wrapper>
+  );
 };

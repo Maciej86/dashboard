@@ -7,25 +7,21 @@ interface ConfirmState {
   id: string;
 }
 
-const initialConfirm: ConfirmState = {
-  status: false,
-  textConfirm: "",
-  id: "",
-};
+const initialConfirm: Array<ConfirmState> = [];
 
 const confirmSlice = createSlice({
   name: "confirm",
-  initialState: initialConfirm,
+  initialState: { initialConfirm },
   reducers: {
-    addConfirm: (state, action: PayloadAction<ConfirmState>) => {
-      state.status = action.payload.status;
-      state.textConfirm = action.payload.textConfirm;
-      state.id = action.payload.id;
+    addConfirm: ({ initialConfirm }, action: PayloadAction<ConfirmState>) => {
+      initialConfirm.push(action.payload);
     },
   },
 });
 
 export const selectConfirm = (state: RootState) => state.confirmStore;
+export const selectConfirmState = (state: RootState) =>
+  selectConfirm(state).initialConfirm;
 
 export const { addConfirm } = confirmSlice.actions;
 
