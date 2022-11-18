@@ -12,7 +12,8 @@ const color = {
   gray_900: "rgb(69, 69, 69)",
   jungleGreen_100: "rgb(46, 184, 92)",
   jungleGreen_200: "rgb(40, 161, 80)",
-  red: "rgba(231, 76, 60, .5)",
+  redAlpha: "rgba(231, 76, 60, .5)",
+  red: "rgb(231, 76, 60)",
 };
 
 const size = {
@@ -53,9 +54,12 @@ export const themeDefault = {
     buttonCancelBgHover: color.gray_500,
     borderInput: color.gray_500,
     borderInputHover: color.gray_900,
-    borderInputError: color.red,
+    borderInputError: color.redAlpha,
     backgroundTile: color.white,
     borderTile: color.gray_200,
+    backgroundConfirm: color.white,
+    okConfirm: color.jungleGreen_100,
+    failedConfirm: color.red,
   },
   size: {
     ...size,

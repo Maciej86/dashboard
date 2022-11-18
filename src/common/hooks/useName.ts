@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+import { addConfirm } from "../../features/Confirm/sliceConfirm";
 import { addNewName } from "../../features/Name/sliceName";
 
 export const useName = () => {
@@ -15,10 +17,24 @@ export const useName = () => {
 
       if (trimUserName === "") {
         setValidateName(true);
+        dispatch(
+          addConfirm({
+            status: false,
+            textConfirm: "Nie podano imienia",
+            id: nanoid(),
+          })
+        );
         return;
       }
 
       dispatch(addNewName(trimUserName));
+      dispatch(
+        addConfirm({
+          status: true,
+          textConfirm: "Imię zostało zapisane",
+          id: nanoid(),
+        })
+      );
     }
   };
 
