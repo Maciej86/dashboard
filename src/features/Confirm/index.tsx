@@ -6,7 +6,6 @@ import { Wrapper, Popup, Strap, Text } from "./styled";
 export const Confirm = () => {
   const dispatch = useDispatch();
   const infoConfirm = useSelector(selectConfirmState);
-  console.log(infoConfirm);
 
   return (
     <Wrapper>
