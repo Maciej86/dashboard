@@ -31,7 +31,7 @@ export const ButtonNav = styled(ButtonToggleNav)<AnimationHeader>`
 `;
 
 export const Clock = styled.p`
-  @media (max-width: ${({ theme }) => theme.media.height400}px) {
+  @media (max-width: ${({ theme }) => theme.media.height450}px) {
     display: none;
   }
 `;
