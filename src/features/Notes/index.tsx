@@ -57,8 +57,9 @@ export const Notes = () => {
     <WrapperNotes>
       <Tile>
         <form onSubmit={onSubmitNotes}>
-          <TileTitle>Notatki</TileTitle>
+          <TileTitle>Utwórz notatkę</TileTitle>
           <TextArea
+            maxLength={1500}
             ref={textNotes}
             placeholder="Dodaj treść notatki..."
           ></TextArea>

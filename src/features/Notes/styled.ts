@@ -14,6 +14,7 @@ export const TextArea = styled.textarea`
   padding: 7px 5px;
   border: 1px solid ${({ theme }) => theme.color.borderInput};
   font-size: 16px;
+  line-height: 1.4;
   resize: none;
 
   &:hover,
