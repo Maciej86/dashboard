@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useName } from "../../common/hooks/useName";
+import { useName } from "../../common/hooks/useName/useName";
 import { RenderName } from "./RandomName";
 import { ButtonCancel, ButtonConfirm } from "../../common/Button/styled";
 import { Description } from "../../common/Tile/styled";

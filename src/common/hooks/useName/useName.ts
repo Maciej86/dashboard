@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
-import { addConfirm } from "../../features/Confirm/sliceConfirm";
-import { addNewName } from "../../features/Name/sliceName";
+import { addConfirm } from "../../../features/Confirm/sliceConfirm";
+import { addNewName } from "../../../features/Name/sliceName";
 
 export const useName = () => {
   const userName = useRef<HTMLInputElement>(null);

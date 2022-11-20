@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useName } from "../../common/hooks/useName";
+import { useName } from "../../common/hooks/useName/useName";
 import { selectNameState } from "../Name/sliceName";
 import { ButtonConfirm } from "../../common/Button/styled";
 import { Description, Tile, TileTitle } from "../../common/Tile/styled";
