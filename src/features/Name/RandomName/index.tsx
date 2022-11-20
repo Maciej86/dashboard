@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { ButtonConfirm } from "../../../common/Button/styled";
+import { ButtonConfirm } from "../../../common/elements/Button/styled";
 import { addNewName } from "../sliceName";
 import { RandomName } from "./styled";
 

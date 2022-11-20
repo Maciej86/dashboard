@@ -1,8 +1,12 @@
 import { useSelector } from "react-redux";
 import { useName } from "../../common/hooks/useName/useName";
 import { selectNameState } from "../Name/sliceName";
-import { ButtonConfirm } from "../../common/Button/styled";
-import { Description, Tile, TileTitle } from "../../common/Tile/styled";
+import { ButtonConfirm } from "../../common/elements/Button/styled";
+import {
+  Description,
+  Tile,
+  TileTitle,
+} from "../../common/elements/Tile/styled";
 import { Form, InputName } from "./styled";
 
 export const Settings = () => {
