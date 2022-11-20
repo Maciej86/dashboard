@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
+import { useNotes } from "../../common/hooks/useNotes/useNotes";
 import { addConfirm } from "../Confirm/sliceConfirm";
 import { addNotes } from "./sliceNotes";
 import { Tile, TileTitle } from "../../common/Tile/styled";
 import { ButtonConfirm } from "../../common/Button/styled";
-import { TextArea } from "./styled";
+import { WrapperNotes, TextArea } from "./styled";
 
 export const Notes = () => {
   const textNotes = useRef<HTMLTextAreaElement>(null);
@@ -52,7 +53,7 @@ export const Notes = () => {
   };
 
   return (
-    <>
+    <WrapperNotes>
       <Tile>
         <form onSubmit={onSubmitNotes}>
           <TileTitle>Notatki</TileTitle>
@@ -63,6 +64,11 @@ export const Notes = () => {
           <ButtonConfirm type="submit">Dodaj notatkę</ButtonConfirm>
         </form>
       </Tile>
-    </>
+
+      <Tile>
+        <TileTitle>Utworzone notatki</TileTitle>
+        {useNotes()}
+      </Tile>
+    </WrapperNotes>
   );
 };
