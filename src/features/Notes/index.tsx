@@ -1,3 +1,9 @@
+import { Description, Tile, TileTitle } from "../../common/Tile/styled";
+
 export const Notes = () => {
-  return <p>Tutaj będą notatki</p>;
+  return (
+    <Tile>
+      <TileTitle>Notatki</TileTitle>
+    </Tile>
+  );
 };
