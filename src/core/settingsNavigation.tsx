@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ErrorPage } from "../features/ErrorPage";
+import { Notes } from "../features/Notes";
 import { Settings } from "../features/Settings";
 import { Start } from "../features/Start";
 import { App } from "./App";
@@ -13,6 +14,10 @@ export const RouterSetings = createBrowserRouter([
       {
         index: true,
         element: <Start />,
+      },
+      {
+        path: "notes",
+        element: <Notes />,
       },
       {
         path: "settings",
