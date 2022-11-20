@@ -24,6 +24,7 @@ const size = {
 const media = {
   hiddenNav: 1000,
   height800: 800,
+  height400: 400,
   height350: 350,
 } as const;
 

@@ -29,3 +29,9 @@ export const ButtonNav = styled(ButtonToggleNav)<AnimationHeader>`
       rotate(${({ $toggleNav }) => ($toggleNav ? 180 : 0)}deg);
   }
 `;
+
+export const Clock = styled.p`
+  @media (max-width: ${({ theme }) => theme.media.height400}px) {
+    display: none;
+  }
+`;
