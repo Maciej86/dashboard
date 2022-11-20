@@ -5,8 +5,8 @@ import { useNotes } from "../../common/hooks/useNotes/useNotes";
 import { addConfirm } from "../Confirm/sliceConfirm";
 import { addNotes } from "./sliceNotes";
 import { Tile, TileTitle } from "../../common/elements/Tile/styled";
-import { ButtonConfirm } from "../../common/elements/Button/styled";
-import { WrapperNotes, TextArea } from "./styled";
+
+import { WrapperNotes, TextArea, ButtonAddNotes } from "./styled";
 
 export const Notes = () => {
   const textNotes = useRef<HTMLTextAreaElement>(null);
@@ -61,7 +61,7 @@ export const Notes = () => {
             ref={textNotes}
             placeholder="Dodaj treść notatki..."
           ></TextArea>
-          <ButtonConfirm type="submit">Dodaj notatkę</ButtonConfirm>
+          <ButtonAddNotes type="submit">Dodaj notatkę</ButtonAddNotes>
         </form>
       </Tile>
 

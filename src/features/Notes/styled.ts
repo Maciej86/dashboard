@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ButtonConfirm } from "../../common/elements/Button/styled";
 
 export const WrapperNotes = styled.div`
   display: flex;
@@ -19,5 +20,11 @@ export const TextArea = styled.textarea`
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.color.borderInputHover};
+  }
+`;
+
+export const ButtonAddNotes = styled(ButtonConfirm)`
+  @media (max-width: 400px) {
+    width: 100%;
   }
 `;
