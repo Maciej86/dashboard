@@ -4,8 +4,8 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useNotes } from "../../common/hooks/useNotes/useNotes";
 import { addConfirm } from "../Confirm/sliceConfirm";
 import { addNotes } from "./sliceNotes";
-import { Tile, TileTitle } from "../../common/Tile/styled";
-import { ButtonConfirm } from "../../common/Button/styled";
+import { Tile, TileTitle } from "../../common/elements/Tile/styled";
+import { ButtonConfirm } from "../../common/elements/Button/styled";
 import { WrapperNotes, TextArea } from "./styled";
 
 export const Notes = () => {
