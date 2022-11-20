@@ -49,6 +49,7 @@ export const Notes = () => {
           id: nanoid(),
         })
       );
+      textNotes.current.value = "";
     }
   };
 
