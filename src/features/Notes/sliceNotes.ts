@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { getDataInLocalStorage } from "../../core/saveLocalStorage";
+import { RootState } from "../../core/store";
 
 interface Notes {
   id: string;
   text: string;
-  date: string;
+  time: string;
 }
 
-const initialNotes: Array<Notes> = [];
+const initialNotes: Array<Notes> = getDataInLocalStorage("notesStore");
 
 const notesSlice = createSlice({
   name: "notes",
@@ -17,6 +19,8 @@ const notesSlice = createSlice({
     },
   },
 });
+
+export const selectNotes = (state: RootState) => state.notesSlice;
 
 export const { addNotes } = notesSlice.actions;
 
