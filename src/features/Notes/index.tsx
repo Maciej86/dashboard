@@ -16,7 +16,9 @@ export const Notes = () => {
     event.preventDefault();
 
     if (textNotes.current !== null) {
-      if (textNotes.current.value === "") {
+      const trimTextNotes = textNotes.current.value.trim();
+
+      if (trimTextNotes === "") {
         dispatch(
           addConfirm({
             status: false,
@@ -30,7 +32,7 @@ export const Notes = () => {
       dispatch(
         addNotes({
           id: nanoid(),
-          text: textNotes.current.value,
+          text: trimTextNotes,
           time: currentDate.toLocaleDateString(undefined, {
             day: "numeric",
             month: "numeric",
@@ -50,15 +52,17 @@ export const Notes = () => {
   };
 
   return (
-    <Tile>
-      <form onSubmit={onSubmitNotes}>
-        <TileTitle>Notatki</TileTitle>
-        <TextArea
-          ref={textNotes}
-          placeholder="Dodaj treść notatki..."
-        ></TextArea>
-        <ButtonConfirm type="submit">Dodaj notatkę</ButtonConfirm>
-      </form>
-    </Tile>
+    <>
+      <Tile>
+        <form onSubmit={onSubmitNotes}>
+          <TileTitle>Notatki</TileTitle>
+          <TextArea
+            ref={textNotes}
+            placeholder="Dodaj treść notatki..."
+          ></TextArea>
+          <ButtonConfirm type="submit">Dodaj notatkę</ButtonConfirm>
+        </form>
+      </Tile>
+    </>
   );
 };
