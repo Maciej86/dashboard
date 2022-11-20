@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addConfirm } from "../Confirm/sliceConfirm";
@@ -9,8 +9,8 @@ import { TextArea } from "./styled";
 
 export const Notes = () => {
   const textNotes = useRef<HTMLTextAreaElement>(null);
-  const [currentDate, setCurrentDay] = useState(new Date());
   const dispatch = useDispatch();
+  const currentDate = new Date();
 
   const onSubmitNotes = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
