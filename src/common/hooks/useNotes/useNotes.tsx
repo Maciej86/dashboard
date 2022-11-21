@@ -1,6 +1,14 @@
 import { useSelector } from "react-redux";
 import { selectNotes } from "../../../features/Notes/sliceNotes";
-import { NoNotes, IconNoNotes, Description, WrapperNotes } from "./styled";
+import {
+  NoNotes,
+  IconNoNotes,
+  Description,
+  WrapperNotes,
+  Note,
+  DeleteNote,
+  DetalisNote,
+} from "./styled";
 
 export const useNotes = () => {
   const notes = useSelector(selectNotes);
@@ -14,7 +22,13 @@ export const useNotes = () => {
   const fetchNotes = (
     <WrapperNotes>
       {notes.map((note) => (
-        <p>{note.text}</p>
+        <Note key={note.id}>
+          <p>{note.text}</p>
+          <DetalisNote>
+            <DeleteNote>Usuń notatkę</DeleteNote>{" "}
+            <span>Dodano: {note.time}</span>
+          </DetalisNote>
+        </Note>
       ))}
     </WrapperNotes>
   );

@@ -61,6 +61,8 @@ export const themeDefault = {
     backgroundConfirm: color.white,
     okConfirm: color.jungleGreen_100,
     failedConfirm: color.red,
+    borderNote: color.gray_200,
+    deleteNote: color.red,
   },
   size: {
     ...size,
