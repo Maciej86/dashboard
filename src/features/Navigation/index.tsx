@@ -28,7 +28,7 @@ export const Navigation = () => {
         </Logo>
         <MenuItems>
           <Item key={nanoid()}>
-            <ItemLink to={"/dashboard"}>
+            <ItemLink to={"/"}>
               <HomeIcon />
               Pulpit
             </ItemLink>

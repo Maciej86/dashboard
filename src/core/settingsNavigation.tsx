@@ -7,9 +7,9 @@ import { App } from "./App";
 
 export const RouterSetings = createHashRouter([
   {
-    path: "/dashboard/",
+    path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -22,10 +22,6 @@ export const RouterSetings = createHashRouter([
       {
         path: "settings",
         element: <Settings />,
-      },
-      {
-        path: "*",
-        element: <ErrorPage />,
       },
     ],
   },
