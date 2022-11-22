@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InputText } from "../../common/Input/styled";
+import { InputText } from "../../common/elements/Input/styled";
 
 interface ValidateName {
   $validName: boolean;

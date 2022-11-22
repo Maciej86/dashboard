@@ -1,26 +1,27 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { ErrorPage } from "../features/ErrorPage";
+import { Notes } from "../features/Notes";
 import { Settings } from "../features/Settings";
 import { Start } from "../features/Start";
 import { App } from "./App";
 
-export const RouterSetings = createBrowserRouter([
+export const RouterSetings = createHashRouter([
   {
     path: "/",
     element: <App />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Start />,
       },
       {
-        path: "settings",
-        element: <Settings />,
+        path: "notes",
+        element: <Notes />,
       },
       {
-        path: "*",
-        element: <ErrorPage />,
+        path: "settings",
+        element: <Settings />,
       },
     ],
   },

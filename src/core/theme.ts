@@ -24,7 +24,7 @@ const size = {
 const media = {
   hiddenNav: 1000,
   height800: 800,
-  height400: 400,
+  height450: 450,
   height350: 350,
 } as const;
 
@@ -61,6 +61,8 @@ export const themeDefault = {
     backgroundConfirm: color.white,
     okConfirm: color.jungleGreen_100,
     failedConfirm: color.red,
+    borderNote: color.gray_200,
+    deleteNote: color.red,
   },
   size: {
     ...size,

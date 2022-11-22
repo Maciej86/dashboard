@@ -12,6 +12,7 @@ import {
 } from "./styled";
 import { ReactComponent as SettingsIcon } from "./images/settings.svg";
 import { ReactComponent as HomeIcon } from "./images/home.svg";
+import { ReactComponent as NotesIcon } from "./images/notes.svg";
 import { nanoid } from "@reduxjs/toolkit";
 
 export const Navigation = () => {
@@ -27,9 +28,15 @@ export const Navigation = () => {
         </Logo>
         <MenuItems>
           <Item key={nanoid()}>
-            <ItemLink to={"/dashboard"}>
+            <ItemLink to={"/"}>
               <HomeIcon />
               Pulpit
+            </ItemLink>
+          </Item>
+          <Item key={nanoid()}>
+            <ItemLink to={"notes"}>
+              <NotesIcon />
+              Notatki
             </ItemLink>
           </Item>
           <Item key={nanoid()}>
