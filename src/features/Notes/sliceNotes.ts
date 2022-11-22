@@ -17,11 +17,15 @@ const notesSlice = createSlice({
     addNotes: (state, action: PayloadAction<Notes>) => {
       state.push(action.payload);
     },
+    removeNote: (state, action: PayloadAction<string>) => {
+      const index = state.findIndex((note) => note.id === action.payload);
+      state.splice(index, 1);
+    },
   },
 });
 
 export const selectNotes = (state: RootState) => state.notesSlice;
 
-export const { addNotes } = notesSlice.actions;
+export const { addNotes, removeNote } = notesSlice.actions;
 
 export default notesSlice.reducer;

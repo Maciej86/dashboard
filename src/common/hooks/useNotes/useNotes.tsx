@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { selectNotes } from "../../../features/Notes/sliceNotes";
+import { useSelector, useDispatch } from "react-redux";
+import { removeNote, selectNotes } from "../../../features/Notes/sliceNotes";
 import {
   NoNotes,
   IconNoNotes,
@@ -12,6 +12,7 @@ import {
 
 export const useNotes = () => {
   const notes = useSelector(selectNotes);
+  const dispatch = useDispatch();
 
   const noNotes = (
     <NoNotes>
@@ -25,7 +26,9 @@ export const useNotes = () => {
         <Note key={note.id}>
           <p>{note.text}</p>
           <DetalisNote>
-            <DeleteNote>Usuń notatkę</DeleteNote>{" "}
+            <DeleteNote onClick={() => dispatch(removeNote(note.id))}>
+              Usuń notatkę
+            </DeleteNote>{" "}
             <span>Dodano: {note.time}</span>
           </DetalisNote>
         </Note>
