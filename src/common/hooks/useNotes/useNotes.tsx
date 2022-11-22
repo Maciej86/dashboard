@@ -22,17 +22,20 @@ export const useNotes = () => {
   );
   const fetchNotes = (
     <WrapperNotes>
-      {notes.map((note) => (
-        <Note key={note.id}>
-          <p>{note.text}</p>
-          <DetalisNote>
-            <DeleteNote onClick={() => dispatch(removeNote(note.id))}>
-              Usuń notatkę
-            </DeleteNote>{" "}
-            <span>Dodano: {note.time}</span>
-          </DetalisNote>
-        </Note>
-      ))}
+      {notes
+        .slice(0)
+        .reverse()
+        .map((note) => (
+          <Note key={note.id}>
+            <p>{note.text}</p>
+            <DetalisNote>
+              <DeleteNote onClick={() => dispatch(removeNote(note.id))}>
+                Usuń notatkę
+              </DeleteNote>{" "}
+              <span>Dodano: {note.time}</span>
+            </DetalisNote>
+          </Note>
+        ))}
     </WrapperNotes>
   );
 
