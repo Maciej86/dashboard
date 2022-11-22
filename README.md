@@ -8,6 +8,8 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 
 ## Nowe funkcje
 
+- dodawanie oraz usuwanie notatek
+- aktualny czas i godzina w górnym pasku
 - informacja potwierdzająca wykonanie operacji
 - możliwość edycji imienia w ustawieniach
 - utworzenie wstępnej nawigacji
@@ -18,4 +20,4 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 
 ## W przygotowaniu
 
-- aktualny czas i godzina w górnym pasku
+- edycja notatek
