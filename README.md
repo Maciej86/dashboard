@@ -21,3 +21,4 @@ Aplikacja jest w trakcie pisania. Wprowadzone nowe funkcjonalności będą opisy
 ## W przygotowaniu
 
 - edycja notatek
+
