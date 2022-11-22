@@ -24,7 +24,7 @@ const notesSlice = createSlice({
   },
 });
 
-export const selectNotes = (state: RootState) => state.notesSlice;
+export const selectNotes = (state: RootState) => state.notesStore;
 
 export const { addNotes, removeNote } = notesSlice.actions;
 

@@ -13,7 +13,7 @@ const store = configureStore({
     toggleNavStore: toggleNavSlice,
     userNameStore: nameSlice,
     confirmStore: confirmSlice,
-    notesSlice: notesSlice,
+    notesStore: notesSlice,
   },
 
   middleware: [sagaMiddleware],
