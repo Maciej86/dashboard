@@ -1,4 +1,6 @@
+import { nanoid } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
+import { addConfirm } from "../../../features/Confirm/sliceConfirm";
 import { removeNote, selectNotes } from "../../../features/Notes/sliceNotes";
 import {
   NoNotes,
@@ -29,7 +31,18 @@ export const useNotes = () => {
           <Note key={note.id}>
             <p>{note.text}</p>
             <DetalisNote>
-              <DeleteNote onClick={() => dispatch(removeNote(note.id))}>
+              <DeleteNote
+                onClick={() => {
+                  dispatch(removeNote(note.id));
+                  dispatch(
+                    addConfirm({
+                      status: true,
+                      textConfirm: "Notatka została usunięta",
+                      id: nanoid(),
+                    })
+                  );
+                }}
+              >
                 Usuń notatkę
               </DeleteNote>{" "}
               <span>Dodano: {note.time}</span>
