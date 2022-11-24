@@ -8,6 +8,10 @@ interface ValidateName {
 export const Form = styled.form`
   display: flex;
   gap: 15px;
+
+  @media (max-width: ${({ theme }) => theme.media.height450}px) {
+    flex-direction: column;
+  }
 `;
 
 export const InputName = styled(InputText)<ValidateName>`
@@ -25,7 +29,7 @@ export const InputName = styled(InputText)<ValidateName>`
       }
     `}
 
-  @media (max-width: ${({ theme }) => theme.media.height350}px) {
+  @media (max-width: ${({ theme }) => theme.media.height450}px) {
     max-width: 100%;
   }
 `;
