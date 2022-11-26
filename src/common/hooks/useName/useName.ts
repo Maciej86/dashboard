@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addConfirm } from "../../../features/Confirm/sliceConfirm";
 import { addNewName } from "../../../features/Name/sliceName";
-import { TextConfirm } from "../../text/textConfirm";
+import { TextName } from "../../text/textName";
 
 export const useName = () => {
   const userName = useRef<HTMLInputElement>(null);
@@ -21,7 +21,7 @@ export const useName = () => {
         dispatch(
           addConfirm({
             status: false,
-            textConfirm: TextConfirm.NAME_EMPTY,
+            textConfirm: TextName.NAME_EMPTY,
             id: nanoid(),
           })
         );
@@ -32,7 +32,7 @@ export const useName = () => {
       dispatch(
         addConfirm({
           status: true,
-          textConfirm: TextConfirm.NAME_ADD,
+          textConfirm: TextName.NAME_ADD,
           id: nanoid(),
         })
       );

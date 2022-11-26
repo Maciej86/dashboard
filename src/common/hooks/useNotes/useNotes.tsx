@@ -2,6 +2,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 import { addConfirm } from "../../../features/Confirm/sliceConfirm";
 import { removeNote, selectNotes } from "../../../features/Notes/sliceNotes";
+import { TextNote } from "../../text/textNote";
 import {
   NoNotes,
   IconNoNotes,
@@ -37,7 +38,7 @@ export const useNotes = () => {
                   dispatch(
                     addConfirm({
                       status: true,
-                      textConfirm: "Notatka została usunięta",
+                      textConfirm: TextNote.NOTE_DELETE,
                       id: nanoid(),
                     })
                   );
