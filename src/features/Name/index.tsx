@@ -15,6 +15,7 @@ import {
   Input,
   ErrorInfo,
 } from "./styled";
+import { TextName } from "../../common/text/textName";
 
 export const Name = () => {
   const [cancelName, setCancelName] = useState(false);
@@ -35,7 +36,7 @@ export const Name = () => {
                 maxLength={10}
                 onClick={() => setValidateName(false)}
                 $validName={validateName}
-                placeholder="Podaj nowe imię"
+                placeholder={TextName.NAME_PLACEHOLDER}
               />
 
               {validateName ? (

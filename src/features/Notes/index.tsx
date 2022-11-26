@@ -5,8 +5,8 @@ import { useNotes } from "../../common/hooks/useNotes/useNotes";
 import { addConfirm } from "../Confirm/sliceConfirm";
 import { addNotes } from "./sliceNotes";
 import { Tile, TileTitle } from "../../common/elements/Tile/styled";
-
 import { WrapperNotes, TextArea, ButtonAddNotes } from "./styled";
+import { TextNote } from "../../common/text/textNote";
 
 export const Notes = () => {
   const textNotes = useRef<HTMLTextAreaElement>(null);
@@ -23,7 +23,7 @@ export const Notes = () => {
         dispatch(
           addConfirm({
             status: false,
-            textConfirm: "Nie wprowadzono żadnej treści",
+            textConfirm: TextNote.NOTE_EMPTY,
             id: nanoid(),
           })
         );
@@ -45,7 +45,7 @@ export const Notes = () => {
       dispatch(
         addConfirm({
           status: true,
-          textConfirm: "Notatka została zapisana",
+          textConfirm: TextNote.NOTE_ADD,
           id: nanoid(),
         })
       );
@@ -61,7 +61,7 @@ export const Notes = () => {
           <TextArea
             maxLength={1500}
             ref={textNotes}
-            placeholder="Dodaj treść notatki..."
+            placeholder={TextNote.NOTE_PLACEHOLDER}
           ></TextArea>
           <ButtonAddNotes type="submit">Dodaj notatkę</ButtonAddNotes>
         </form>
