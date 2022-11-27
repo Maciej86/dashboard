@@ -30,7 +30,7 @@ export const useNotes = () => {
         .reverse()
         .map((note) => (
           <Note key={note.id}>
-            <p>{note.text}</p>
+            <div dangerouslySetInnerHTML={{ __html: note.text }}></div>
             <DetalisNote>
               <DeleteNote
                 onClick={() => {
