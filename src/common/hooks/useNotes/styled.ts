@@ -38,13 +38,21 @@ export const DetalisNote = styled.div`
   color: ${({ theme }) => theme.color.colorTextDescription};
 `;
 
-export const DeleteNote = styled.button`
+const ButtonNote = styled.button`
   background: none;
   border: none;
   color: ${({ theme }) => theme.color.deleteNote};
   cursor: pointer;
 
   &:hover {
-    font-weight: 500;
+    text-decoration: underline;
   }
+`;
+
+export const EditNote = styled(ButtonNote)`
+  color: ${({ theme }) => theme.color.editNote};
+`;
+
+export const DeleteNote = styled(ButtonNote)`
+  color: ${({ theme }) => theme.color.deleteNote};
 `;

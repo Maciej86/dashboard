@@ -11,6 +11,7 @@ import {
   Note,
   DeleteNote,
   DetalisNote,
+  EditNote,
 } from "./styled";
 
 export const useNotes = () => {
@@ -32,6 +33,7 @@ export const useNotes = () => {
           <Note key={note.id}>
             <div dangerouslySetInnerHTML={{ __html: note.text }}></div>
             <DetalisNote>
+              <EditNote>Edytuj notatke</EditNote>
               <DeleteNote
                 onClick={() => {
                   dispatch(removeNote(note.id));
