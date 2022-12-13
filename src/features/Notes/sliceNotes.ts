@@ -21,6 +21,10 @@ const notesSlice = createSlice({
       const index = state.findIndex((note) => note.id === action.payload);
       state.splice(index, 1);
     },
+    editNote: (state, action: PayloadAction<string>) => {
+      const index = state.findIndex((note) => note.id === action.payload);
+      state[index].text = action.payload;
+    },
   },
 });
 

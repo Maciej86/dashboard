@@ -63,6 +63,7 @@ export const themeDefault = {
     failedConfirm: color.red,
     borderNote: color.gray_200,
     deleteNote: color.red,
+    editNote: color.pickledBluewood_100,
   },
   size: {
     ...size,
